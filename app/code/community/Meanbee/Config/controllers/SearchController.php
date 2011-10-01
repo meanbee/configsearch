@@ -18,7 +18,6 @@ class Meanbee_Config_SearchController extends Mage_Adminhtml_Controller_Action {
                 }
             }
             
-            // @TODO Actually perform the search..
             echo $this->_return($results);
         } else {
             echo $this->_return('You failed to provide a search parameter');
