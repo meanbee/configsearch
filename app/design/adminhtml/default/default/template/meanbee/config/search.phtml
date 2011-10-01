@@ -1,0 +1,58 @@
+<div class="switcher">
+  <input type="text" name="q" id="meanbee_config_search_text" style="width: 188px; padding: 3px;" />
+  <div id="meanbee_config_search_results" class="autocomplete"></div>
+</div>
+
+<style type="text/css" media="screen">
+    #meanbee_config_search_results {
+        overflow: auto;
+        max-height: 300px;
+    }
+</style>
+
+<script type="text/javascript" charset="utf-8">
+    new Ajax.Autocompleter(
+        "meanbee_config_search_text",
+        "meanbee_config_search_results",
+        "<?php echo $this->getUrl('mbconfig/search/index') ?>", {
+            method: 'get',
+            onShow: function(element, update) {
+                if(!update.style.position || update.style.position=='absolute') {
+                    update.style.position = 'absolute';
+                    Position.clone(element, update, {
+                        setHeight: false,
+                        offsetTop: element.offsetHeight
+                    });
+                }
+                Effect.Appear(update,{duration:0});
+            },
+            // When an element is clicked..
+            updateElement: function (element) {
+                window.location = element.down('a').href;
+            }
+        }
+    );
+    
+    <?php if ($fieldset = $this->getRequest()->getParam('fieldset')): ?>
+        document.observe("dom:loaded", function() {
+            var el = $('<?php echo $fieldset ?>');
+            
+            if (el) {
+                $$('fieldset collapsable').invoke('hide');
+                $('<?php echo $fieldset ?>').show();
+            }
+        });
+    <?php endif ?>
+
+    <?php if ($row = $this->getRequest()->getParam('row')): ?>
+        document.observe("dom:loaded", function() {
+            var el = $('<?php echo $row ?>');
+            
+            if (el) {
+                new Effect.Highlight($('<?php echo $row ?>').up().up(), {
+                    duration: 5
+                });
+            }
+        });
+    <?php endif ?>
+</script>

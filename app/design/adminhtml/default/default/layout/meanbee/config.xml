@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <meanbee_config_search>
+        <reference name="left">
+            <block type="mbconfig/search" name="meanbee.config.search" before="adminhtml.system.config.switcher" />
+        </reference>
+    </meanbee_config_search>
+    <adminhtml_system_config_edit>
+        <update handle="meanbee_config_search" />
+    </adminhtml_system_config_edit>
+</layout>
+

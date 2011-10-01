@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Meanbee_Config>
+            <version>0.1.0</version>
+        </Meanbee_Config>
+    </modules>
+    <global>
+        <models>
+            <mbconfig>
+                <class>Meanbee_Config_Model</class>
+            </mbconfig>
+        </models>
+        <blocks>
+            <mbconfig>
+                <class>Meanbee_Config_Block</class>
+            </mbconfig>
+        </blocks>
+        <helpers>
+            <mbconfig>
+                <class>Meanbee_Config_Helper</class>
+            </mbconfig>
+        </helpers>
+    </global>
+    <admin>
+        <routers>
+            <mbconfig>
+                <use>admin</use>
+                <args>
+                    <module>Meanbee_Config</module>
+                    <frontName>mbconfig</frontName>
+                </args>
+            </mbconfig>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <mbconfig>
+                    <file>meanbee/config.xml</file>
+                </mbconfig>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>
