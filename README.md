@@ -4,3 +4,4 @@ Some items that need to be done are:
 
 * Improve the search, perhaps Zend_Lucene?  Or is that OTT?
 * Move repository to the Modman format
+* Cache the array we build from the XML search

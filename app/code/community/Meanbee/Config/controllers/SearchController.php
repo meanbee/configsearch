@@ -11,6 +11,7 @@ class Meanbee_Config_SearchController extends Mage_Adminhtml_Controller_Action {
             foreach ($fields as $field) {
                 $description = $field['description'];
                 
+                // @TODO: Improve the search matching.
                 if (strpos($description, $search_param) !== false) {
                     $url = $this->getUrl('adminhtml/system_config/edit/section/' . $field['section']) . '?fieldset=' . $field['fieldset_id'] . '&row=' . $field['row_id'];
                     $results[] = "<a href='" . $url . "'>" . $field['description'] . "</a>";
@@ -24,9 +25,7 @@ class Meanbee_Config_SearchController extends Mage_Adminhtml_Controller_Action {
         }
     }
 
-    /**
-     * @TODO Actually cache it..
-     */
+    // @TODO: Cache the representation we build of the configuration options.
     protected function _loadCachedConfigArray() {
         $fields = array();
         $config = Mage::getSingleton('adminhtml/config');
