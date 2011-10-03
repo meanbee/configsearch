@@ -11,8 +11,7 @@ class Meanbee_Config_SearchController extends Mage_Adminhtml_Controller_Action {
             foreach ($fields as $field) {
                 $description = $field['description'];
                 
-                // @TODO: Improve the search matching.
-                if (strpos($description, $search_param) !== false) {
+                if ($this->_isMatch($search_param, $description) !== false) {
                     $url = $this->getUrl('adminhtml/system_config/edit/section/' . $field['section']) . '?fieldset=' . $field['fieldset_id'] . '&row=' . $field['row_id'];
                     $results[] = "<a href='" . $url . "'>" . $field['description'] . "</a>";
                 }
@@ -58,6 +57,10 @@ class Meanbee_Config_SearchController extends Mage_Adminhtml_Controller_Action {
         }
             
         return $fields;
+    }
+    
+    protected function _isMatch($needle, $haystack) {
+        return preg_match("/\b{$needle}\b/i", $haystack) > 0;
     }
 
     protected function _getSearchParameter() {
