@@ -1,0 +1,95 @@
+<_>
+   <form_key>2Ax2yZNgVh9fofTY</form_key>
+   <name>Meanbee_Config</name>
+   <channel>community</channel>
+   <version_ids>
+      <version_ids>2</version_ids>
+   </version_ids>
+   <summary>Adds a search box to your administration configuration area.</summary>
+   <description>Adds a search box to your administration configuration area.</description>
+   <license>Open Software License v3.0</license>
+   <license_uri>http://www.opensource.org/licenses/osl-3.0.php</license_uri>
+   <version>1.0.0</version>
+   <stability>stable</stability>
+   <notes>Initial release.</notes>
+   <authors>
+      <name>
+         <name>Nick Jones</name>
+      </name>
+      <user>
+         <user>meanbee</user>
+      </user>
+      <email>
+         <email>nick.jones@meanbee.com</email>
+      </email>
+   </authors>
+   <depends_php_min>5.2.0</depends_php_min>
+   <depends_php_max>6.0.0</depends_php_max>
+   <depends>
+      <package>
+         <name>
+            <name/>
+         </name>
+         <channel>
+            <channel/>
+         </channel>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+         <files>
+            <files>    </files>
+         </files>
+      </package>
+      <extension>
+         <name>
+            <name>PDO</name>
+         </name>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+      </extension>
+   </depends>
+   <contents>
+      <target>
+         <target>magelocal</target>
+         <target>magecommunity</target>
+         <target>mageetc</target>
+         <target>magedesign</target>
+         <target>magedesign</target>
+      </target>
+      <path>
+         <path/>
+         <path>Meanbee/Config</path>
+         <path>modules/Meanbee_Config.xml</path>
+         <path>adminhtml/default/default/layout/meanbee/config</path>
+         <path>adminhtml/default/default/template/meanbee/config</path>
+      </path>
+      <type>
+         <type>file</type>
+         <type>dir</type>
+         <type>file</type>
+         <type>dir</type>
+         <type>dir</type>
+      </type>
+      <include>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+      </include>
+      <ignore>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+      </ignore>
+   </contents>
+</_>
