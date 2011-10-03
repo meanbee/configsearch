@@ -1,0 +1,9 @@
+## Code
+code                            app/code/community/Meanbee/Config
+
+## Design
+design/adminhtml/layout/*       app/design/adminhtml/default/default/layout/
+design/adminhtml/template/*     app/design/adminhtml/default/default/template/
+
+## Misc
+Module.xml                      app/etc/modules/Meanbee_Config.xml
