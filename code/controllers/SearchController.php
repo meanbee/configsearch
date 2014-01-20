@@ -33,11 +33,13 @@ class Meanbee_Config_SearchController extends Mage_Adminhtml_Controller_Action {
                 $section_label = (string) $section->label;
                 $section_tag = $section->getName();
 
+                if (!$section->descend('groups')) continue;
                 foreach ($section->descend('groups') as $groupgroup) {
                     foreach ($groupgroup->children() as $group) {
                         $group_label = (string) $group->label;
                         $group_tag = $group->getName();
 
+                        if (!$group->descend('fields')) continue;
                         foreach ($group->descend('fields') as $fieldgroup) {
                             foreach ($fieldgroup->children() as $field) {
                                 $field_label = $field->label;
